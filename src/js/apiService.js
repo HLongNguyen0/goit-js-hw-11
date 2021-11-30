@@ -12,7 +12,6 @@ export default class Api {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
-    this.pageSize = PER_PAGE;
   }
 
   async getImg() {
@@ -22,7 +21,7 @@ export default class Api {
 
     return {
       data,
-      hasNextPage: this.page <= data.totalHits / this.pageSize,
+      hasNextPage: this.page <= data.totalHits / PER_PAGE,
     };
   }
 

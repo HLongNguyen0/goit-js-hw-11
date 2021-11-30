@@ -25,13 +25,13 @@ async function onSearchInput(event) {
   if (newQuery === '') {
     return;
   }
-  onLoadModeBtn();
+  onLoadingBtn();
   const cards = await parceImgCard();
   refs.gallery.insertAdjacentHTML('beforeend', markUp(cards));
   if (!lightbox) {
     lightbox = new SimpleLightbox('.gallery a');
   }
-  onMainModeBtn();
+  onDefaultBtn();
 }
 async function onLoadContent() {
   const cards = await parceImgCard();
@@ -58,12 +58,12 @@ function checkHits(res) {
   throw Error('No such pictures');
 }
 
-function onLoadModeBtn() {
-  refs.loadMore.textContent = 'loading...';
+function onLoadingBtn() {
   refs.loadMore.setAttribute('disabled', true);
+  refs.loadMore.textContent = 'Searching...';
   refs.loadMore.classList.remove('is-hidden');
 }
-function onMainModeBtn() {
-  refs.loadMore.textContent = 'Load more';
+function onDefaultBtn() {
   refs.loadMore.removeAttribute('disabled');
+  refs.loadMore.textContent = 'Show more';
 }
