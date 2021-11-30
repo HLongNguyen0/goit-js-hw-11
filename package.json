@@ -16,7 +16,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://shevchenko-andrey.github.io/goit-js-hw-11"
+    "url": "https://github.com/HLongNguyen0/goit-js-hw-11"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
